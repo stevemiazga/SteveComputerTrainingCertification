@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{E363DC3A-F3D0-4CB1-8D30-DF92723EF239}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{44C5723E-7A1F-4F97-88A0-E412C5D9F4A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{44C5723E-7A1F-4F97-88A0-E412C5D9F4A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEEF31B3-5910-4966-B2BE-EE65087C5ED1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\..\Code\project\DatabaseSchema.jpg = ..\..\..\..\..\..\..\Code\project\DatabaseSchema.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
