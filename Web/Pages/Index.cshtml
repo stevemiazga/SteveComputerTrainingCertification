@@ -1,0 +1,39 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home";
+}
+
+<p>
+    Steve's Computer Training Certifications is an addition to Steve's Computer Training to show courses and exams that can be taken by a student in achieving certain Microsoft certifications.
+    It uses ASP.NET Core 3.1 Razor Pages, Web API, and EF core 3.1 with code structured in a simple way to demonstrate design patterns such as Domain Driven Design (DDD), Command Query Responsibility Segregation (CQRS),
+    Mediator Pattern for commands, queries, and events, Dependency Injection, and the Repository Pattern. Bootstrap 4 for styling and unit testing with Moq is also used.
+</p>
+
+<p>
+    The architecture contains a domain model with entities and value objects, an application layer containing application use cases separated by commands and queries,
+    an infrastructure layer to separate database concerns working with Entity Framework, and then the presentation layer of ASP.NET Core Razor Pages focusing 
+    on its MVVM (Model-View-ViewModel) framework and using services through Web API to access the other layers. Following this approach, I was able to learn new technologies
+    and design patterns used in keeping code loosely coupled, separated throughout, and easily maintainable. This is the main focus in implementing
+    Steve's Computer Training Certifications even through a much simpler approach could achieve its purpose, I wanted to keep it simple to demonstrate these concepts.
+    In much larger complex applications and processes, the benefits would be even more effective.
+
+</p>
+
+<p>
+    In implementing the code, for reference I followed Pluralsight courses such as DDD and EF core and CQRS in Practice, and Microsoft eShopOnWeb ASP.NET Core Reference Application.
+    I learned to preserve encapsulation in the domain model with Entity Framework separating domain from the database and the relationships between entities and tables.
+    The MediatR library is used to enable the mediator pattern in sending messages through the CQRS pattern to handle commands, queries, and events.
+    My code uses commands such as creating a student or evaluating qualification for certifications that are handled as separate commands using Entity Framework.
+    Queries are used to display comprehensive views of student data using the Dapper framework to ensure high performance. Events are created when a student obtains a certification based 
+    on their exams passed, the event is processed when Entity Framework saves changes. Most recent events are displayed as notifications in the application.
+    From there I use new technologies to process and transfer data into view models from ASP.NET Core Razor Pages, and services using HttpClient for Web API. Dependency injection
+    is used in ASP.NET Core to call services and repositories used for Entity Framework.
+</p>
+
+<div>
+    View source code of Steve's Computer Training Certifications - Github
+</div>
+
+<div>
+    Start Steve's Computer Training Certifications -  <a asp-page="/Student/Index">Get Students</a>
+</div>

@@ -1,0 +1,93 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div style="margin-bottom:20px;">
+    @await Component.InvokeAsync("ObtainCertification")&nbsp;&nbsp;<a asp-page="Create">Create New</a>
+</div>
+
+<table class="table table-sm" id="students_table">
+    <thead>
+        <tr>
+            <th class="no-sort">
+                &nbsp;
+            </th>
+            <th class="no-sort">
+                &nbsp;
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Courses
+            </th>
+            <th>
+                Exams
+            </th>
+            <th>
+                Certifications
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StudentRecords)
+        {
+            <tr>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.StudentId"><i class="fa fa-edit"></i></a>
+                </td>
+                <td>
+                    <a asp-page="Delete" asp-route-id="@item.StudentId"><i class="fa fa-trash" style="color:#cd5c5c;"></i></a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)&nbsp;@Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <table>
+                        @foreach (var course in item.Courses)
+                        {
+                            <tr>
+                                <td style="border:none;">
+                                    @Html.DisplayFor(modelItem => course.CourseTitle)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td>
+                    <table style="border:none;">
+                        @foreach (var exam in item.Exams)
+                        {
+                            <tr>
+                                <td style="border:none;">
+                                    @Html.DisplayFor(modelItem => exam.ExamTitle)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td>
+                    <table style="border:none;">
+                        @foreach (var cert in item.Certifications)
+                        {
+                            <tr>
+                                <td style="border:none;">
+                                    @Html.DisplayFor(modelItem => cert.CertificationTitle)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
